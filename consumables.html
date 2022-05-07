@@ -6,7 +6,7 @@
 	<body>
 		<h2>Add Consumable Data</h2>
 		<form>
-			<table>
+			<table style="width:25%">
 				<tr>
 					<td> Consumable ID <input type ="text" id="ConsumableID" name="Consumable ID"> </td>
 				</tr>
@@ -17,11 +17,23 @@
 					<td> Potion Mana ID <input type ="text" id="PotionHealthID" name="PotionHealth ID"> </td>
 				</tr>
 				<tr>
+					<select name="GradeingCategoryName">
+                        <option value="recoveryHealthID">Recovery Health ID</option>
+                        <option value="recoveryHealthID">Recovery Mana ID</option>
+                    </select>
+				</tr>
+				<tr>
+					<td> Quantity ID <input type ="text" id="QuantityID" name="Quantity ID"> </td>
+				</tr>
+				<tr>
+					<td> Description <input type ="text" id="DescriptionID" name="Description ID"> </td>
+				</tr>
+				<tr>
 					<th>  <input type="submit" value="Add"> </th>
 				</tr>
 			</table>
 		</form>
-		<h2> Remove Chestpiece Data </h2>
+		<h2> Remove Consumable Data </h2>
 		<form>
 		  <table style="width:25%">
 			<tr>
