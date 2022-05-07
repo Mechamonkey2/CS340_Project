@@ -21,11 +21,22 @@
 		    display: table-cell;
 		    vertical-align: middle;
 		}
+
+		table, th, td {
+  	border: 1px solid black;
+  	border-collapse: collapse;
+		}
+
+		table.center {
+		vertical-align: middle;
+  	margin-left: auto;
+  	margin-right: auto;
+	}
 		</style>
 	</head>
 	<body>
 		<div class="my-block">
-		<h2> Gear Database </h2>
+		<h1> Gear Database </h2>
 		<form action = "./weapon.html">
 			<h4> Object ID For Weapons </h4>
 			<input type ="text" id="objectID" name="Object ID">
@@ -36,7 +47,25 @@
 			<input type ="text" id="objectID" name="Object ID">
 			<input type="submit" value="Submit">
 		</form>
-	</div>
+
+	<form>
+		<h3> ObjectID Data </h3>
+			<table class ="center" style="width:15%">
+				<tr>
+					<td> ObjectID </td>
+				</tr>
+				<tr>
+					<td> ObjectID </td>
+				</tr>
+				<tr>
+					<td> ObjectID </td>
+				</tr>
+				<tr>
+					<td> ObjectID </td>
+				</tr>
+			</table>
+	</form>
+		</div>
 		<br/>
 	</body>
 </html>
