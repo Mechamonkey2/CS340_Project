@@ -24,16 +24,28 @@
   </head>
 
   <body>
-    <div class ="my-block">
-    <h1> Armor Database </h1>
-    <a href="./helmet.html"><h2> Helmets </h2></a>
-
-    <a href="./chestpiece.html"><h2> Chestpieces </h2></a>
-
-    <a href="./legging.html"><h2> Leggings </h2></a>
-
-    <a href="./boot.html"><h2> Boots </h2></a>
-    </div>
+    <div class="my-block">
+		<h1> Armor Database </h2>
+		<form action = "./helmet.html">
+			<h4> Object ID For Helmet </h4>
+			<input type ="text" id="helmetID" name="Helmet ID">
+			<input type="submit" value="Submit">
+		</form>
+		<form action = "./chestpiece.html">
+			<h4> Object ID For Chestpiece </h4>
+			<input type ="text" id="chestpieceID" name="Chestpiece ID">
+			<input type="submit" value="Submit">
+		</form>
+    <form action = "./legging.html">
+      <h4> Object ID For Legging </h4>
+      <input type ="text" id="leggingID" name="Legging ID">
+      <input type="submit" value="Submit">
+    </form>
+    <form action = "./boot.html">
+      <h4> Object ID For Boot </h4>
+      <input type ="text" id="bootID" name="Boot ID">
+      <input type="submit" value="Submit">
+    </form>
 
   </body>
 </html>
