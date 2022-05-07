@@ -1,14 +1,41 @@
 <HTML>
   <head>
     <title> Foreign Game Informator </title>
+    <style>
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    display: table;
+}
+
+.my-block {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+</style>
+
  </head>
 
   <body>
-    <h2> Foreign Game Informator </h2>
+    <div class ="my-block">
+    <h1> Name yet to be decided game Informator </h1>
+    <h2> Please enter character name </h2>
   <label for="characterName" Character Name: </label>
     <form action="./playerInventory.html">
       <input type ="text" id="characterName" name="characterName"><br><br>
       <input type="submit" value="Submit">
+      <a href="./playerInventory.html"><h2> Backend Development </h2></a>
     </form>
+  </div>
+
+
   </body>
 </HTML>
