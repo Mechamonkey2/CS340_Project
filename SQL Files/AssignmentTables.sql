@@ -2,7 +2,7 @@
 
 
 
-create table "Bow Stat" (
+create table Bow_Stat (
 	swordStatID int(16) auto_increment unique not null primary key,
 	attackID int(8) not null,
 	bonusID varchar(256),
@@ -10,7 +10,7 @@ create table "Bow Stat" (
 	rarityID varchar(64) not null
 );
 
-create table "Staff Stat" (
+create table Staff_Stat (
 	swordStatID int(16) auto_increment unique not null primary key,
 	magicID int(8) not null,
 	bonusID varchar(256),
@@ -18,7 +18,7 @@ create table "Staff Stat" (
 	rarityID varchar(64) not null
 );
 
-create table "Sword Stat" (
+create table Sword_Stat (
 	swordStatID int(16) auto_increment unique not null primary key,
 	attackID int(8) not null,
 	bonusID varchar(256),
@@ -31,7 +31,7 @@ create table Bows (
 	description varchar(128) not null,
 	bowStatID int(16),
 	
-	foreign key (bowStatID) references "Bow Stat"(bowStatID)
+	foreign key (bowStatID) references Bow_Stat(bowStatID)
 );
 
 create table Staffs (
@@ -39,7 +39,7 @@ create table Staffs (
 	description varchar(128) not null,
 	StaffStatID int(16),
 	
-	foreign key (StaffStatID) references "Staff Stat"(StaffStatID)
+	foreign key (StaffStatID) references Staff_Stat(StaffStatID)
 ); 
 
 create table Swords (
@@ -47,7 +47,7 @@ create table Swords (
 	description varchar(128) not null,
 	swordStatID int(16),
 	
-	foreign key (swordStatID) references "Sword Stat"(swordStatID)
+	foreign key (swordStatID) references Sword_Stat(swordStatID)
 );
 
 
@@ -78,14 +78,14 @@ create table Gears(
 	foreign key (objectID) references Weapons(objectID)
 );
 
-create table "Mana Potions" (
+create table Mana_Potions (
 	potionManaID int(8)auto_increment unique not null primary key,
 	recoveryManaID int(8) not null,
 	quantityID int(8) not null,
 	description varchar(128) not null
 );
 
-create table "Health Potions" (
+create table Health_Potions (
 	potionHealthID int(8)auto_increment unique not null primary key,
 	recoveryHealthID int(8) not null,
 	quantityID int(8) not null,
@@ -98,8 +98,8 @@ create table Consumables (
 	potionHealthID int(8),
 	potionManaID int(8),
 
-	foreign key (potionHealthID) references "Health Potions"(potionHealthID),
-	foreign key (potionManaID) references "Mana Potions"(potionManaID)
+	foreign key (potionHealthID) references Health_Potions(potionHealthID),
+	foreign key (potionManaID) references Mana_Potions(potionManaID)
 );
 
 
