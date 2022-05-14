@@ -1,9 +1,31 @@
 
 
+create table Boot_Stats(
+	bootStatID int(16) auto_increment unique not null primary key,
+	physicalDefenseID int(8) not null,
+	magicalDefenseID int(8) not null,
+	bonusID varchar(256),
+	durabilityID int(8) not null,
+	rarityID varchar(64) not null
+);
 
+create table Legging_Stats(
+	LeggingStatID int(16) auto_increment unique not null primary key,
+	physicalDefenseID int(8) not null,
+	magicalDefenseID int(8) not null,
+	bonusID varchar(256),
+	durabilityID int(8) not null,
+	rarityID varchar(64) not null
+);
 
-INSERT INTO Weapons (objectID, weaponID, description)
-VALUES (NULL,1,"A ranged weapon");
+create table Chest_Piece_Stats(
+	chestPieceStatID int(16) auto_increment unique not null primary key,
+	physicalDefenseID int(8) not null,
+	magicalDefenseID int(8) not null,
+	bonusID varchar(256),
+	durabilityID int(8) not null,
+	rarityID varchar(64) not null
+);
 
 create table Helemt_Stats(
 	helmetStatID int(16) auto_increment unique not null primary key,
@@ -183,8 +205,6 @@ create table "Player Inventory" (
 	consumableID int(32),
 	gearID int(32),
 	inventorySize int(8),
-	inventoryData
-
 	foreign key (consumableID) references Consumables(consumableID),
 	foreign key (gearID) references Gears(gearID)
 );
