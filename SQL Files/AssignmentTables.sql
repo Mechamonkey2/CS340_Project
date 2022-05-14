@@ -2,9 +2,17 @@
 
 
 
+INSERT INTO Weapons (objectID, weaponID, description)
+VALUES (NULL,1,"A ranged weapon");
 
-
-
+create table Helemt_Stats(
+	helmetStatID int(16) auto_increment unique not null primary key,
+	physicalDefenseID int(8) not null,
+	magicalDefenseID int(8) not null,
+	bonusID varchar(256),
+	durabilityID int(8) not null,
+	rarityID varchar(64) not null
+);
 
 create table Boots(
 	armorID int(16) auto_increment unique not null primary key,
@@ -86,6 +94,9 @@ create table Bows (
 	foreign key (bowStatID) references Bow_Stat(bowStatID)
 );
 
+
+
+
 create table Staffs (
 	weaponID int(16) auto_increment unique not null primary key,
 	description varchar(128) not null,
@@ -102,7 +113,7 @@ create table Swords (
 	foreign key (swordStatID) references Sword_Stat(swordStatID)
 );
 
-
+--create tables for multiple fk ids
 
 create table Weapons (
 	objectID int(16) auto_increment unique not null primary key,
