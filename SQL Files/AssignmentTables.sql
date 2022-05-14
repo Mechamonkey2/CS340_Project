@@ -18,7 +18,7 @@ create table Boots(
 	armorID int(16) auto_increment unique not null primary key,
 	description varchar(128) not null,
 	bootStatID int(16),
-	
+
 	foreign key (bootStatID) references Boot_Stat(bootStatID),
 );
 
@@ -26,7 +26,7 @@ create table Leggings(
 	armorID int(16) auto_increment unique not null primary key,
 	description varchar(128) not null,
 	leggingStatID int(16),
-	
+
 	foreign key (leggingStatID) references Legging_Stat(leggingStatID),
 );
 
@@ -34,7 +34,7 @@ create table Chest_Pieces(
 	armorID int(16) auto_increment unique not null primary key,
 	description varchar(128) not null,
 	chestPieceStatID int(16),
-	
+
 	foreign key (chestPieceStatID) references Chest_Piece_Stat(chestPieceStatID),
 );
 
@@ -42,7 +42,7 @@ create table Helmets(
 	armorID int(16) auto_increment unique not null primary key,
 	description varchar(128) not null,
 	helmetStatID int(16),
-	
+
 	foreign key (helmetStatID) references Helmet_Stat(helmetStatID),
 );
 
@@ -93,8 +93,6 @@ create table Bows (
 
 	foreign key (bowStatID) references Bow_Stat(bowStatID)
 );
-
-
 
 
 create table Staffs (
