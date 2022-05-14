@@ -1,9 +1,6 @@
 
-
-
-
 create table Bow_Stat (
-	swordStatID int(16) auto_increment unique not null primary key,
+	bowStatID int(16) auto_increment unique not null primary key,
 	attackID int(8) not null,
 	bonusID varchar(256),
 	durabilityID int(8) not null,
@@ -11,7 +8,7 @@ create table Bow_Stat (
 );
 
 create table Staff_Stat (
-	swordStatID int(16) auto_increment unique not null primary key,
+	staffStatID int(16) auto_increment unique not null primary key,
 	magicID int(8) not null,
 	bonusID varchar(256),
 	durabilityID int(8) not null,
@@ -30,7 +27,7 @@ create table Bows (
 	weaponID int(16) auto_increment unique not null primary key,
 	description varchar(128) not null,
 	bowStatID int(16),
-	
+
 	foreign key (bowStatID) references Bow_Stat(bowStatID)
 );
 
@@ -38,15 +35,15 @@ create table Staffs (
 	weaponID int(16) auto_increment unique not null primary key,
 	description varchar(128) not null,
 	StaffStatID int(16),
-	
+
 	foreign key (StaffStatID) references Staff_Stat(StaffStatID)
-); 
+);
 
 create table Swords (
 	weaponID int(16) auto_increment unique not null primary key,
 	description varchar(128) not null,
 	swordStatID int(16),
-	
+
 	foreign key (swordStatID) references Sword_Stat(swordStatID)
 );
 
@@ -63,17 +60,12 @@ create table Weapons (
 );
 
 
-
-
-
-
-
 create table Gears(
 	gearID int(16) auto_increment unique not null primary key,
 	objectID int(16),
 	equipmentTypeID varchar(128) not null,
-	
-	
+
+
 	foreign key (objectID) references Armors(objectID),
 	foreign key (objectID) references Weapons(objectID)
 );
@@ -128,7 +120,7 @@ create table "Player Inventory" (
 	gearID int(32),
 	inventorySize int(8),
 	inventoryData
-	
+
 	foreign key (consumableID) references Consumables(consumableID),
 	foreign key (gearID) references Gears(gearID)
 );
