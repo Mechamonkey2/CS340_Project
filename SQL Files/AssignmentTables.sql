@@ -2,6 +2,72 @@
 
 
 
+create table "Bow Stat" (
+	swordStatID int(16) auto_increment unique not null primary key,
+	attackID int(8) not null,
+	bonusID varchar(256),
+	durabilityID int(8) not null,
+	rarityID varchar(64) not null
+);
+
+create table "Staff Stat" (
+	swordStatID int(16) auto_increment unique not null primary key,
+	magicID int(8) not null,
+	bonusID varchar(256),
+	durabilityID int(8) not null,
+	rarityID varchar(64) not null
+);
+
+create table "Sword Stat" (
+	swordStatID int(16) auto_increment unique not null primary key,
+	attackID int(8) not null,
+	bonusID varchar(256),
+	durabilityID int(8) not null,
+	rarityID varchar(64) not null
+);
+
+create table Bows (
+	weaponID int(16) auto_increment unique not null primary key,
+	description varchar(128) not null,
+	bowStatID int(16),
+	
+	foreign key (bowStatID) references "Bow Stat"(bowStatID)
+);
+
+create table Staffs (
+	weaponID int(16) auto_increment unique not null primary key,
+	description varchar(128) not null,
+	StaffStatID int(16),
+	
+	foreign key (StaffStatID) references "Staff Stat"(StaffStatID)
+); 
+
+create table Swords (
+	weaponID int(16) auto_increment unique not null primary key,
+	description varchar(128) not null,
+	swordStatID int(16),
+	
+	foreign key (swordStatID) references "Sword Stat"(swordStatID)
+);
+
+
+
+create table Weapons (
+	objectID int(16) auto_increment unique not null primary key,
+	weaponID int(16),
+	description varchar(128),
+
+	foreign key (weaponID) references Swords(weaponID),
+	foreign key (weaponID) references Staffs(weaponID),
+	foreign key (weaponID) references Bows(weaponID)
+);
+
+
+
+
+
+
+
 create table Gears(
 	gearID int(16) auto_increment unique not null primary key,
 	objectID int(16),
@@ -10,7 +76,6 @@ create table Gears(
 	
 	foreign key (objectID) references Armors(objectID),
 	foreign key (objectID) references Weapons(objectID)
-
 );
 
 create table "Mana Potions" (
@@ -64,6 +129,6 @@ create table "Player Inventory" (
 	inventorySize int(8),
 	inventoryData
 	
-	foreign key (consumableID) references Consumables(consumableID)
+	foreign key (consumableID) references Consumables(consumableID),
 	foreign key (gearID) references Gears(gearID)
 );
