@@ -1,26 +1,58 @@
-INSERT INTO Bow_Stat(bowStatID, attackID, bonusID, durabilityID,rarityID)
-VALUES ('696', '150', '5% bonus damage', '100','Legendary');
 
-INSERT INTO Staff_Stat(bowStatID, attackID, bonusID, durabilityID,rarityID)
-VALUES ('151', '150', '5% bonus damage', '100','Legendary');
+--Example
+--INSERT INTO bsg_people (fname, lname, homeworld, age)
+--VALUES (:fnameInput, :lnameInput, :homeworld_id_from_dropdown_Input, :ageInput);
 
-INSERT INTO Sword_Stat(bowStatID, attackID, bonusID, durabilityID,rarityID)
-VALUES ('132', '150', '5% bonus damage', '100','Legendary');
+
+--Weapon Stats
+
+INSERT INTO Bow_Stat(bowStatID, attack, bonus, durability,rarity)
+VALUES (:bowStatInput, :attackInput, :bonusInput, :durablityInput, :rarityInput);
+
+INSERT INTO Staff_Stat(staffStatID, attack, bonus, durability,rarity)
+VALUES (:staffStatInput, :attackInput, :bonusInput, :durablityInput, :rarityInput);
+
+INSERT INTO Sword_Stat(swordStatID, attack, bonus, durability,rarity)
+VALUES (:swordStatInput, :attackInput, :bonusInput, :durablityInput, :rarityInput);
+
+--Weapons
 
 INSERT INTO Bows(weaponID, description, bowStatID)
-VALUES (NULL, 'Silver Bow', SELECT bowStatID, 696);
+VALUES (:weaponIDInput, :descriptionInput, :bowStatIDInput);
 
-INSERT INTO Staffs(weaponID, description, bowStatID)
-VALUES (NULL, 'Great Branch Staff', SELECT bowStatID, 151);
+INSERT INTO Staffs(weaponID, description, staffStatID)
+VALUES (:weaponIDInput, :descriptionInput, :staffStatIDInput);
 
-INSERT INTO Swords(weaponID, description, bowStatID)
-VALUES (NULL, 'Silver Sword', SELECT bowStatID, 132);
+INSERT INTO Swords(weaponID, description, swordStatID)
+VALUES (:weaponIDInput, :descriptionInput, :swordStatIDInput);
 
-INSERT INTO Weapons (objectID, weaponID, description)
-VALUES (NULL,1,"A ranged weapon");
-
-INSERT INTO Weapons (objectID, weaponID, description)
-VALUES (NULL,2,"A magical stick");
+--Main Wepon Call
 
 INSERT INTO Weapons (objectID, weaponID, description)
-VALUES (NULL,3,"A versatile weapon");
+VALUES (:objectIDInput, :weaponIDInput, :descriptionInput);
+
+
+--Armour Stat
+
+--Armour
+
+--Main Armour Call
+
+
+--Main Gear Call
+
+
+
+
+
+--Consumables
+
+
+-- Main Consumable Call
+
+
+
+
+
+
+

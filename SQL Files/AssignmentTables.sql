@@ -191,3 +191,37 @@ create table Player_Inventory (
 	foreign key (consumableID) references Consumables(consumableID),
 	foreign key (gearID) references Gears(gearID)
 );
+
+
+
+
+--Inital Data for the Database.
+
+
+INSERT INTO Bow_Stat(bowStatID, attack, bonus, durability,rarity)
+VALUES ('696', '150', '5% bonus damage', '100','Legendary');
+
+INSERT INTO Staff_Stat(staffStatID, attack, bonus, durability,rarity)
+VALUES ('151', '150', '5% bonus damage', '100','Legendary');
+
+INSERT INTO Sword_Stat(swordStatID, attack, bonus, durability,rarity)
+VALUES ('132', '150', '5% bonus damage', '100','Legendary');
+
+INSERT INTO Bows(weaponID, description, bowStatID)
+VALUES ('1', 'Silver Bow', '696');
+
+INSERT INTO Staffs(weaponID, description, staffStatID)
+VALUES ('2', 'Great Branch Staff', '151');
+
+INSERT INTO Swords(weaponID, description, swordStatID)
+VALUES ('3', 'Silver Sword', '132');
+
+INSERT INTO Weapons (objectID, weaponID, description)
+VALUES (NULL,1,"A ranged weapon");
+
+INSERT INTO Weapons (objectID, weaponID, description)
+VALUES (NULL,2,"A magical stick");
+
+INSERT INTO Weapons (objectID, weaponID, description)
+VALUES (NULL,3,"A versatile weapon");
+
