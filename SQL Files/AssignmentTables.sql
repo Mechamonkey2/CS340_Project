@@ -149,32 +149,33 @@ create table Gears(
 );
 
 create table Mana_Potions (
-	potionManaID int(8)auto_increment unique not null primary key,
+	potionManaID int(8),
 	recoveryMana int(8) not null,
 	quantity int(8) not null,
-	description varchar(128) not null
+	description varchar(128) not null,
+	
+	foreign key (potionManaID) references Consumables(potionManaID)
 );
 
 create table Health_Potions (
-	potionHealthID int(8)auto_increment unique not null primary key,
+	potionHealthID int(8),
 	recoveryHealth int(8) not null,
 	quantity int(8) not null,
-	description varchar(128) not null
+	description varchar(128) not null,
+	
+	foreign key (potionHealthID) references Consumables(potionHealthID)
 );
 
 
 create table Consumables (
 	consumableID int(16) auto_increment unique not null primary key,
-	potionHealthID int(8),
-	potionManaID int(8),
-
-	foreign key (potionHealthID) references Health_Potions(potionHealthID),
-	foreign key (potionManaID) references Mana_Potions(potionManaID)
+	potionHealthID int(8) unique not null,
+	potionManaID int(8) unique not null
 );
 
 
 create table Player_Inventory (
-	playerID int(32) auto_increment unique not null,
+	playerID int(32) unique not null,
 	inventoryID int(32) auto_increment unique not null primary key,
 	consumableID int(32),
 	gearID int(32),
