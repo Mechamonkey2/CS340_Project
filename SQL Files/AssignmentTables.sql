@@ -2,38 +2,38 @@
 
 create table Boot_Stats(
 	bootStatID int(16) auto_increment unique not null primary key,
-	physicalDefenseID int(8) not null,
-	magicalDefenseID int(8) not null,
-	bonusID varchar(256),
-	durabilityID int(8) not null,
-	rarityID varchar(64) not null
+	physicalDefense int(8) not null,
+	magicalDefense int(8) not null,
+	bonus varchar(256),
+	durability int(8) not null,
+	rarity varchar(64) not null
 );
 
 create table Legging_Stats(
-	LeggingStatID int(16) auto_increment unique not null primary key,
-	physicalDefenseID int(8) not null,
-	magicalDefenseID int(8) not null,
-	bonusID varchar(256),
-	durabilityID int(8) not null,
-	rarityID varchar(64) not null
+	leggingStatID int(16) auto_increment unique not null primary key,
+	physicalDefense int(8) not null,
+	magicalDefense int(8) not null,
+	bonus varchar(256),
+	durability int(8) not null,
+	rarity varchar(64) not null
 );
 
 create table Chest_Piece_Stats(
 	chestPieceStatID int(16) auto_increment unique not null primary key,
-	physicalDefenseID int(8) not null,
-	magicalDefenseID int(8) not null,
-	bonusID varchar(256),
-	durabilityID int(8) not null,
-	rarityID varchar(64) not null
+	physicalDefense int(8) not null,
+	magicalDefense int(8) not null,
+	bonus varchar(256),
+	durability int(8) not null,
+	rarity varchar(64) not null
 );
 
 create table Helemt_Stats(
 	helmetStatID int(16) auto_increment unique not null primary key,
-	physicalDefenseID int(8) not null,
-	magicalDefenseID int(8) not null,
-	bonusID varchar(256),
-	durabilityID int(8) not null,
-	rarityID varchar(64) not null
+	physicalDefense int(8) not null,
+	magicalDefense int(8) not null,
+	bonus varchar(256),
+	durability int(8) not null,
+	rarity varchar(64) not null
 );
 
 create table Boots(
@@ -86,26 +86,26 @@ create table Armors(
 
 create table Bow_Stat (
 	bowStatID int(16) auto_increment unique not null primary key,
-	attackID int(8) not null,
-	bonusID varchar(256),
-	durabilityID int(8) not null,
-	rarityID varchar(64) not null
+	attack int(8) not null,
+	bonus varchar(256),
+	durability int(8) not null,
+	rarity varchar(64) not null
 );
 
 create table Staff_Stat (
 	staffStatID int(16) auto_increment unique not null primary key,
-	magicID int(8) not null,
-	bonusID varchar(256),
-	durabilityID int(8) not null,
-	rarityID varchar(64) not null
+	magic int(8) not null,
+	bonus varchar(256),
+	durability int(8) not null,
+	rarity varchar(64) not null
 );
 
 create table Sword_Stat (
 	swordStatID int(16) auto_increment unique not null primary key,
-	attackID int(8) not null,
-	bonusID varchar(256),
-	durabilityID int(8) not null,
-	rarityID varchar(64) not null
+	attack int(8) not null,
+	bonus varchar(256),
+	durability int(8) not null,
+	rarity varchar(64) not null
 );
 
 create table Bows (
@@ -120,7 +120,7 @@ create table Bows (
 create table Staffs (
 	weaponID int(16) auto_increment unique not null primary key,
 	description varchar(128) not null,
-	StaffStatID int(16),
+	staffStatID int(16),
 
 	foreign key (StaffStatID) references Staff_Stat(StaffStatID)
 );
@@ -158,15 +158,15 @@ create table Gears(
 
 create table Mana_Potions (
 	potionManaID int(8)auto_increment unique not null primary key,
-	recoveryManaID int(8) not null,
-	quantityID int(8) not null,
+	recoveryMana int(8) not null,
+	quantity int(8) not null,
 	description varchar(128) not null
 );
 
 create table Health_Potions (
 	potionHealthID int(8)auto_increment unique not null primary key,
-	recoveryHealthID int(8) not null,
-	quantityID int(8) not null,
+	recoveryHealth int(8) not null,
+	quantity int(8) not null,
 	description varchar(128) not null
 );
 
@@ -181,30 +181,13 @@ create table Consumables (
 );
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-create table "Player Inventory" (
+create table Player_Inventory (
 	playerID int(32) auto_increment unique not null,
 	inventoryID int(32) auto_increment unique not null primary key,
 	consumableID int(32),
 	gearID int(32),
 	inventorySize int(8),
+	inventtory int(inventorySize) not null
 	foreign key (consumableID) references Consumables(consumableID),
 	foreign key (gearID) references Gears(gearID)
 );
