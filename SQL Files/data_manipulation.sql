@@ -15,6 +15,8 @@ VALUES (:staffStatInput, :attackInput, :bonusInput, :durablityInput, :rarityInpu
 INSERT INTO Sword_Stat(swordStatID, attack, bonus, durability,rarity)
 VALUES (:swordStatInput, :attackInput, :bonusInput, :durablityInput, :rarityInput);
 
+--Update Sword Stats
+
 --Weapons
 
 INSERT INTO Bows(weaponID, description, bowStatID)
@@ -34,10 +36,36 @@ VALUES (:objectIDInput, :weaponIDInput, :descriptionInput);
 
 --Armour Stat
 
+INSERT INTO Boot_Stat(bootStatID, physicalDefense, magicalDefense, bonus, durability,rarity)
+VALUES (:bootStatInput, :physicalInput, :magicalInput, :bonusInput, :durablityInput, :rarityInput);
+
+INSERT INTO Legging_Stat(bootStatID, physicalDefense, magicalDefense, bonus, durability,rarity)
+VALUES (:leggingStatInput, :physicalInput, :magicalInput, :bonusInput, :durablityInput, :rarityInput);
+
+INSERT INTO Chest_Piece_Stat(bootStatID, physicalDefense, magicalDefense, bonus, durability,rarity)
+VALUES (:chestpieceStatInput, :physicalInput, :magicalInput, :bonusInput, :durablityInput, :rarityInput);
+
+INSERT INTO Helmet_Stat(bootStatID, physicalDefense, magicalDefense, bonus, durability,rarity)
+VALUES (:helmetStatInput, :physicalInput, :magicalInput, :bonusInput, :durablityInput, :rarityInput);
+
 --Armour
+
+INSERT INTO Boots(armorID, description, bootStatID)
+VALUES (:weaponIDInput, :descriptionInput, :bowStatIDInput);
+
+INSERT INTO Leggings(armorID, description, leggingStatID)
+VALUES (:weaponIDInput, :descriptionInput, :bowStatIDInput);
+
+INSERT INTO Chest_Pieces(armorID, description, chestPieceStatID)
+VALUES (:weaponIDInput, :descriptionInput, :bowStatIDInput);
+
+INSERT INTO Helmets(armorID, description, helmetStatID)
+VALUES (:weaponIDInput, :descriptionInput, :bowStatIDInput);
 
 --Main Armour Call
 
+INSERT INTO Gear (gearID, objectID, equipmentType)
+VALUES (:gearIDInput, :objectIDInput, :equipmentTypeInput);
 
 --Main Gear Call
 
@@ -49,10 +77,3 @@ VALUES (:objectIDInput, :weaponIDInput, :descriptionInput);
 
 
 -- Main Consumable Call
-
-
-
-
-
-
-
