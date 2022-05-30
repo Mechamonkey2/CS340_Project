@@ -1,0 +1,80 @@
+<html>
+	<form>
+      <h3>Data</h3>
+        <table style="width:25%">
+			{{#each Weapons}}
+				<tr>
+					<td> {{description}} </td>
+				</tr>
+			{{/each}}
+        </table>
+    </form>
+	
+	<h2>Edit Data</h2>
+	<form>
+	<table style="width:25%">
+	  <tr>
+        <td>
+			<select name="GradeingCategoryName">
+					<option value="HelmetID">Bow ID</option>
+					<option value="ChestplateID">Sword ID</option>
+					<option value="LeggingID">Staff ID</option>
+			</select> <input type ="text" id="recoveryHMID" name="recoveryHM ID">
+		</td>
+      </tr>
+      <tr>
+		<td>
+			<select name="GradeingCategoryName">
+					<option value="HelmetID">Attack ID</option>
+					<option value="ChestplateID">Magic ID</option>
+			</select> <input type ="text" id="recoveryHMID" name="recoveryHM ID">
+		</td>
+      </tr>
+      <tr>
+        <td> Bonus ID<input type ="text" id="bonusID" name="Bonus ID"> </td>
+      </tr>
+      <tr>
+        <td> Durability ID <input type ="text" id="durabilityID" name="Durability ID"> </td>
+      </tr>
+        <td> Rarity ID <input type ="text" id="rarityID" name="Rarity ID"> </td>
+      </tr>
+      <tr>
+        <th>  <input type="submit" value="Edit"> </th>
+      </tr>
+    </table>
+    </form>
+    <h2> Remove Data </h2>
+    <form>
+      <table style="width:25%">
+        <tr>
+			<td>
+				<select name="GradeingCategoryName">
+					<option value="HelmetID">Bow ID</option>
+					<option value="ChestplateID">Sword ID</option>
+					<option value="LeggingID">Staff ID</option>
+				</select> <input type ="text" id="recoveryHMID" name="recoveryHM ID">
+			</td>
+        </tr>
+        <tr>
+          <th>  <input type="submit" value="Remove"> </th>
+        </tr>
+      </table>
+    </form>
+	<h2> Search Data </h2>
+    <form>
+      <table style="width:25%">
+        <tr>
+			<td>
+				<select name="GradeingCategoryName">
+					<option value="HelmetID">Bow ID</option>
+					<option value="ChestplateID">Sword ID</option>
+					<option value="LeggingID">Staff ID</option>
+				</select> <input type ="text" id="recoveryHMID" name="recoveryHM ID">
+			</td>
+        </tr>
+        <tr>
+          <th>  <input type="submit" value="Search"> </th>
+        </tr>
+      </table>
+    </form>
+</html>
