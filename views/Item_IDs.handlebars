@@ -3,15 +3,15 @@
       <h3>Data</h3>
         <table style="width:25%">
 			<tr>
+				<td> Item ID </td>
+				<td> Consumable ID </td>
 				<td> Gear ID </td>
-				<td> Weapon Stat ID </td>
-				<td> Description </td>
 			</tr>
-			{{#each Weapons}}
+			{{#each Item_IDs}}
 				<tr>
+					<td> {{itemID}} </td>
+					<td> {{consumableID}} </td>
 					<td> {{gearID}} </td>
-					<td> {{weaponStatID}} </td>
-					<td> {{description}} </td>
 				</tr>
 			{{/each}}
         </table>

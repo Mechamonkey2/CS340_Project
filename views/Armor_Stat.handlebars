@@ -3,15 +3,21 @@
       <h3>Data</h3>
         <table style="width:25%">
 			<tr>
-				<td> Gear ID </td>
-				<td> Weapon Stat ID </td>
-				<td> Description </td>
+				<td>Armor Stat ID</td>
+				<td>Physical Defense</td>
+				<td>Magical Defense</td>				
+				<td>Bonus</td>
+				<td>Durability</td>
+				<td>Rarity</td>
 			</tr>
-			{{#each Weapons}}
+			{{#each Armor_Stat}}
 				<tr>
-					<td> {{gearID}} </td>
-					<td> {{weaponStatID}} </td>
-					<td> {{description}} </td>
+					<td> {{armorStatID}} </td>
+					<td> {{physicalDefense}} </td>
+					<td> {{magicalDefense}} </td>
+					<td> {{bonus}} </td>
+					<td> {{durability}} </td>
+					<td> {{rarity}} </td>
 				</tr>
 			{{/each}}
         </table>
