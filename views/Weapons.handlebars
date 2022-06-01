@@ -4,13 +4,15 @@
         <table style="width:25%">
 			<tr>
 				<td> Gear ID </td>
-				<td> Weapon Stat ID </td>
-				<td> Description </td>
+				<td> name </td>
+				<td> rarity </td>
+				<td> description </td>
 			</tr>
-			{{#each Weapons}}
+			{{#each Page}}
 				<tr>
 					<td> {{gearID}} </td>
-					<td> {{weaponStatID}} </td>
+					<td> {{name}} </td>
+					<td> {{rarity}} </td>
 					<td> {{description}} </td>
 				</tr>
 			{{/each}}

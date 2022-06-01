@@ -16,34 +16,47 @@ app.set('mysql', mysql);
 app.use('/', express.static('public'));
 
 
-function getWeapons(res, mysql, context, complete){
-        mysql.pool.query("SELECT * FROM Weapons", function(error, results, fields){
+function getFullBlank(res, mysql, context, complete,info){
+		var command = "SELECT * FROM " + info;
+        mysql.pool.query(command, function(error, results, fields){
             if(error){
                 res.write(JSON.stringify(error));
                 res.end();
             }
-            context.Weapons  = results;
+            context.Page  = results;
             complete();
         });
 }
 
-
-app.get('/Weapons.html', function(req, res, next){
+function getWebPage (req, res, next,info){
 	var callbackCount = 0;
         var context = {};
-        //context.jsscripts = ["deleteperson.js","filterpeople.js","searchpeople.js"];
         var mysql = req.app.get('mysql');
-        //getPeople(res, mysql, context, complete);
-        getWeapons(res, mysql, context, complete);
+        getFullBlank(res, mysql, context, complete,info);
         function complete(){
             callbackCount++;
             if(callbackCount >= 1){
-                res.status(200).render('Weapons', context);
+                res.status(200).render(info, context);
             }
 
     }
-	//Maby the db code will work here, hopefully?
-	//res.status(200).render('Weapons',data);
+}
+app.get('/Item_IDs.html', function(req, res, next){
+	getWebPage(req, res, next,'Item_IDs');
+});
+
+app.get('/Weapons.html', function(req, res, next){
+	getWebPage(req, res, next,'Weapons');
+});
+app.get('/Weapon_Stats.html', function(req, res, next){
+	getWebPage(req, res, next,'Weapon_Stats');
+});
+
+app.get('/Armors.html', function(req, res, next){
+	getWebPage(req, res, next,'Armors');
+});
+app.get('/Armor_Stats.html', function(req, res, next){
+	getWebPage(req, res, next,'Armor_Stats');
 });
 
 
