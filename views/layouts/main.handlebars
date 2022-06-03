@@ -1,13 +1,20 @@
 <!doctype html>
 <html>
 <head>
-	<title>Demo Page</title>
+	<title>CS340 Spring 2022 Inventory Database</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    {{#each jsscripts}}
-    <script src="/static/{{this}}"></script>
-    {{/each}}
+    <link rel="stylesheet" href="./style.css" type="text/css">
 </head>
 <body>
+	<div id="Nav">
+		<div><a href="./Item_IDs">Item ID</a></div>
+		<div><a href="./Gears">Gears</a></div>
+		<div><a href="./Weapons">Weapons</a></div>
+		<div><a href="./Armors">Armors</a></div>
+		<div><a href="./Weapon_Stats">Weapon Stats</a></div>
+		<div><a href="./Armor_Stats">Armor Stats</a></div>
+		<div><a href="./Consumables">Consumables</a></div>
+	</div>
 	{{{body}}}
 </body>
 </html>

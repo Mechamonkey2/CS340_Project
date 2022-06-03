@@ -75,7 +75,7 @@ create table Weapons_Stats_List(
 
 
 create table Recovery_Types(
-	recoveryTypeID int(4) not null unique primary key,
+	recoveryTypeID int(4) auto_increment not null unique primary key,
 	name varchar(64) not null,
 	description varchar(128) not null
 );
@@ -88,7 +88,7 @@ create table Consumables (
 	quantity int(8) not null,
 	description varchar(128) not null,
 	
-	foreign key (recoveryTypeID) references Recovery_Types(recoveryTypeID)
+	foreign key (recoveryTypeID) references Recovery_Types(recoveryTypeID),
 	foreign key (consumableID) references Item_IDs(consumableID)
 );
 
@@ -176,8 +176,17 @@ INSERT INTO Weapons_Stats_List(weaponStatListID,weaponStatID,gearID)
 VALUES  (null,1,11), (null,1,12), (null,3,13),
 (null,5,13), (null,2,14), (null,4,15), (null,6,15);
 
+INSERT INTO Recovery_Types(recoveryTypeID,name,description)
+VALUES (1,'Health','Recouvers the users health'),
+(2,'Mana','Recouvers the users Mana');
 
-
+INSERT INTO Consumables(consumableID,name,recovery,recoveryTypeID,quantity,description)
+VALUES ((Select consumableID from Item_IDs where consumableID='1'),'Small Health Potion',50,1,5,'A smaler version of the Health Potions'),
+((Select consumableID from Item_IDs where consumableID='2'),'Health Potion',100,1,25,'A potion that contains a red-like substance that gives you health back'),
+((Select consumableID from Item_IDs where consumableID='3'),'Large Health Potion',150,1,3,'A larger verson of the Health Potions'),
+((Select consumableID from Item_IDs where consumableID='4'),'Small Mana Potion',50,2,5,'A smaler version of the Mana Potions'),
+((Select consumableID from Item_IDs where consumableID='5'),'Mana Potion',100,2,5,'A potion that contains a blue-like supstance that gives you mana'),
+((Select consumableID from Item_IDs where consumableID='6'),'Large Mana Potion',150,2,5,'A larger version of the Mana Potions');
 
 
 

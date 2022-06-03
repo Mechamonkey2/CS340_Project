@@ -1,7 +1,6 @@
-<html>
-	<form>
-      <h3>Data</h3>
-        <table style="width:25%">
+<form>
+	<h3 class="heading">Data</h3>
+		<table class="data">
 			<tr>
 				<td>Armor Stat ID</td>
 				<td>Physical Defense</td>
@@ -20,74 +19,62 @@
 					<td> {{rarity}} </td>
 				</tr>
 			{{/each}}
-        </table>
-    </form>
-	
-	<h2>Edit Data</h2>
+		</table>
+</form>
+		
+<h2 class="heading">Edit Data</h2>
 	<form>
-	<table style="width:25%">
-	  <tr>
-        <td>
-			<select name="GradeingCategoryName">
-					<option value="HelmetID">Bow ID</option>
-					<option value="ChestplateID">Sword ID</option>
-					<option value="LeggingID">Staff ID</option>
-			</select> <input type ="text" id="recoveryHMID" name="recoveryHM ID">
-		</td>
-      </tr>
-      <tr>
-		<td>
-			<select name="GradeingCategoryName">
-					<option value="HelmetID">Attack ID</option>
-					<option value="ChestplateID">Magic ID</option>
-			</select> <input type ="text" id="recoveryHMID" name="recoveryHM ID">
-		</td>
-      </tr>
-      <tr>
-        <td> Bonus ID<input type ="text" id="bonusID" name="Bonus ID"> </td>
-      </tr>
-      <tr>
-        <td> Durability ID <input type ="text" id="durabilityID" name="Durability ID"> </td>
-      </tr>
-        <td> Rarity ID <input type ="text" id="rarityID" name="Rarity ID"> </td>
-      </tr>
-      <tr>
-        <th>  <input type="submit" value="Edit"> </th>
-      </tr>
-    </table>
-    </form>
-    <h2> Remove Data </h2>
-    <form>
-      <table style="width:25%">
-        <tr>
-			<td>
-				<select name="GradeingCategoryName">
-					<option value="HelmetID">Bow ID</option>
-					<option value="ChestplateID">Sword ID</option>
-					<option value="LeggingID">Staff ID</option>
-				</select> <input type ="text" id="recoveryHMID" name="recoveryHM ID">
-			</td>
-        </tr>
-        <tr>
-          <th>  <input type="submit" value="Remove"> </th>
-        </tr>
-      </table>
-    </form>
-	<h2> Search Data </h2>
-    <form>
-      <table style="width:25%">
-        <tr>
-			<td>
-				<select name="GradeingCategoryName">
-					<option value="HelmetID">Bow ID</option>
-					<option value="ChestplateID">Sword ID</option>
-					<option value="LeggingID">Staff ID</option>
-				</select> <input type ="text" id="recoveryHMID" name="recoveryHM ID">
-			</td>
-        </tr>
-        <tr>
-          <th>  <input type="submit" value="Search"> </th>
-        </tr>
-      </table>
-    </form>
-</html>
+		<table class="data">
+			<tr>
+				<td>Select Armor Stat ID to edit<input type ="text" id="armorStatID" name="armorStatID"></td>
+			</tr>
+			<tr>
+				<td>Physical Defence<input type ="text" id="physicalDefence" name="physicalDefence"></td>
+			</tr>
+			<tr>
+				<td>Magical Defence<input type ="text" id="magicalDefence" name="magicalDefence"></td>
+			</tr>
+			<tr>
+				<td>Bonus <input type ="text" id="bonus" name="bonus"></td>
+			</tr>
+			<tr>
+				<td> Durability<input type ="text" id="durability" name="durability"> </td>
+			</tr>
+				<td>Rarity<input type ="text" id="rarityID" name="rarity"> </td>
+			</tr>
+			<tr>
+				<td> <input type="submit" value="Edit"> </td>
+			</tr>
+		</table>
+	</form>
+	<h2 class="heading"> Remove Data </h2>
+	<form>
+		<table class="data">
+			<tr>
+				<td> Armor Stat ID <input type ="text" id="armorStatID_Search" name="armorStatID_Search">
+				</td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Remove"></td>
+			</tr>
+		</table>
+	</form>
+	<h2 class="heading"> Search Data </h2>
+	<form action="/Armor_Stats" method="POST">
+		<table class="data">
+			<tr>
+				<td><select id="searchData" name="searchData">
+						<option value="armorStatID">Armor Stat ID</option>
+						<option value="physicalDefence">Physical Defence</option>
+						<option value="magicalDefence">Magical Defencce</option>
+						<option value="bonus">Bonus</option>
+						<option value="durability">Durability</option>
+						<option value="rarity">Rarity</option>
+					</select><input type ="text" id="searchDataAmount" name="searchDataAmount" min="0"></td>
+			</tr>
+			<tr>
+				<th>  <input type="submit" value="Search"> </th>
+			</tr>
+		</table>
+	</form>
+
