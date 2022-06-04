@@ -15,7 +15,8 @@ create table Gears(
 
 /* Both Weapon_Stat and Armor_Stat are set up so that a peice of gear,
 	let say a helmet, can have both the basic stats, but also another stat, like
-	one that only increases magic aswell. This means that it can be a M:M relationship*/
+	one that only increases magic aswell. This means that it can be a M:M relationship
+	This is done through Weapons_Stats_List and Armors_Stats_List.*/
 
 create table Armor_Stats(
 	armorStatID int(16) auto_increment unique not null primary key,

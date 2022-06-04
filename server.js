@@ -15,7 +15,10 @@ app.set('port', process.argv[2]);
 app.set('mysql', mysql);
 app.use('/', express.static('public'));
 
-
+/* Gets the full page with the data being unedited, normaly used for the begining
+	of the visit. Other functions will take care of editing, searching ect.
+	This is also generlized for all tables, info is used for the table its
+	grabbing. */
 function getFullBlank(res, mysql, context, complete,info){
 		var command = "SELECT * FROM " + info;
         mysql.pool.query(command, function(error, results, fields){
@@ -28,6 +31,11 @@ function getFullBlank(res, mysql, context, complete,info){
         });
 }
 
+/* this works together with getFullBlank to run the page that is loaded.
+	It was intended to be generlized for all uses, but I didnt have time
+	to code it where it can chose whitch function would run for what.
+	Also, the name of the handlebars page must be the EXACT same as the
+	table in the Database.*/
 function getWebPage (req, res, next,info){
 		var callbackCount = 0;
         var context = {};
@@ -41,9 +49,9 @@ function getWebPage (req, res, next,info){
 
     }
 }
-// Finds the specific information, cer, from the table, from, where something is
-// keeped constant, where.
-//				Needs the information to be sanitized
+/* Finds the specific information, cer, from the table, from, where something is
+	keeped constant, where.
+		Information given is not sanatized, it up to the calling funtion to do that */
 function getCertanInfo(req, res, next, cer, from, where,info){
 		var callbackCount = 0;
         var context = {};
@@ -68,7 +76,7 @@ function getCertanInfo(req, res, next, cer, from, where,info){
 
 
 
-
+/* All the pages loaded normaly */
 app.get('/Item_IDs', function(req, res, next){
 	getWebPage(req, res, next,'Item_IDs');
 });
@@ -111,12 +119,14 @@ app.post('/Armor_Stats/', function(req, res, next){
 
 
 
-
+// 404 error
 app.use(function(req,res, next){
   res.status(404);
   res.render('404');
 });
 
+
+//500 error
 app.use(function(err, req, res, next){
   console.error(err.stack);
   res.status(500);

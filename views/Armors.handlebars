@@ -1,7 +1,7 @@
-<html>
-	<form>
-      <h3>Data</h3>
-        <table style="width:25%">
+
+<form>
+    <h3 class="heading">Data</h3>
+        <table class="data">
 			<tr>
 				<td> Gear ID </td>
 				<td> Name </td>
@@ -17,73 +17,55 @@
 				</tr>
 			{{/each}}
         </table>
-    </form>
+</form>
 	
-	<h2>Edit Data</h2>
-	<form>
-	<table style="width:25%">
-	  <tr>
-        <td>
-			<select name="GradeingCategoryName">
-					<option value="HelmetID">Bow ID</option>
-					<option value="ChestplateID">Sword ID</option>
-					<option value="LeggingID">Staff ID</option>
-			</select> <input type ="text" id="recoveryHMID" name="recoveryHM ID">
-		</td>
-      </tr>
+<h2 class="heading">Edit Data</h2>
+<form>
+	<table class="data">
+		<tr>
+			<td> Gear ID<input type ="text" id="gearID" name="gearID"> </td>
+		</tr>
+		<tr>
+			<td> Name<input type ="text" id="name" name="name"> </td>
+		</tr>
       <tr>
-		<td>
-			<select name="GradeingCategoryName">
-					<option value="HelmetID">Attack ID</option>
-					<option value="ChestplateID">Magic ID</option>
-			</select> <input type ="text" id="recoveryHMID" name="recoveryHM ID">
-		</td>
+        <td> Rarity <input type ="text" id="rarity" name="rarity"> </td>
       </tr>
-      <tr>
-        <td> Bonus ID<input type ="text" id="bonusID" name="Bonus ID"> </td>
-      </tr>
-      <tr>
-        <td> Durability ID <input type ="text" id="durabilityID" name="Durability ID"> </td>
-      </tr>
-        <td> Rarity ID <input type ="text" id="rarityID" name="Rarity ID"> </td>
+        <td>Description<input type ="text" id="description" name="description"> </td>
       </tr>
       <tr>
         <th>  <input type="submit" value="Edit"> </th>
       </tr>
     </table>
-    </form>
-    <h2> Remove Data </h2>
-    <form>
-      <table style="width:25%">
+</form>
+<h2 class="heading"> Remove Data </h2>
+<form>
+    <table class="data">
+		<tr>
+			<td>
+				Gear ID <input type ="text" id="removeData" name="removeData">
+			</td>
+		</tr>
+		<tr>
+			<th>  <input type="submit" value="Remove"> </th>
+		</tr>
+	</table>
+</form>
+<h2 class="heading"> Search Data </h2>
+<form>
+    <table class="data">
         <tr>
 			<td>
-				<select name="GradeingCategoryName">
-					<option value="HelmetID">Bow ID</option>
-					<option value="ChestplateID">Sword ID</option>
-					<option value="LeggingID">Staff ID</option>
-				</select> <input type ="text" id="recoveryHMID" name="recoveryHM ID">
+				<select name="searchData" id="searchData">
+					<option value="gearID">Gear ID</option>
+					<option value="name">Name</option>
+					<option value="rarity">Rarity</option>
+					<option value="description">Description</option>
+				</select> <input type ="text" id="searchDataAmount" name="searchDataAmount">
 			</td>
         </tr>
         <tr>
-          <th>  <input type="submit" value="Remove"> </th>
+			<th>  <input type="submit" value="Search"> </th>
         </tr>
-      </table>
-    </form>
-	<h2> Search Data </h2>
-    <form>
-      <table style="width:25%">
-        <tr>
-			<td>
-				<select name="GradeingCategoryName">
-					<option value="HelmetID">Bow ID</option>
-					<option value="ChestplateID">Sword ID</option>
-					<option value="LeggingID">Staff ID</option>
-				</select> <input type ="text" id="recoveryHMID" name="recoveryHM ID">
-			</td>
-        </tr>
-        <tr>
-          <th>  <input type="submit" value="Search"> </th>
-        </tr>
-      </table>
-    </form>
-</html>
+    </table>
+</form>
