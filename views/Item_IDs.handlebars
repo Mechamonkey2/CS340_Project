@@ -1,7 +1,6 @@
-<html>
-	<form>
-      <h3>Data</h3>
-        <table style="width:25%">
+<form>
+    <h3 class="heading">Data</h3>
+        <table class="data">
 			<tr>
 				<td> Item ID </td>
 				<td> Consumable ID </td>
@@ -15,73 +14,53 @@
 				</tr>
 			{{/each}}
         </table>
-    </form>
-	
-	<h2>Edit Data</h2>
-	<form>
-	<table style="width:25%">
-	  <tr>
-        <td>
-			<select name="GradeingCategoryName">
-					<option value="HelmetID">Bow ID</option>
-					<option value="ChestplateID">Sword ID</option>
-					<option value="LeggingID">Staff ID</option>
-			</select> <input type ="text" id="recoveryHMID" name="recoveryHM ID">
-		</td>
-      </tr>
-      <tr>
-		<td>
-			<select name="GradeingCategoryName">
-					<option value="HelmetID">Attack ID</option>
-					<option value="ChestplateID">Magic ID</option>
-			</select> <input type ="text" id="recoveryHMID" name="recoveryHM ID">
-		</td>
-      </tr>
-      <tr>
-        <td> Bonus ID<input type ="text" id="bonusID" name="Bonus ID"> </td>
-      </tr>
-      <tr>
-        <td> Durability ID <input type ="text" id="durabilityID" name="Durability ID"> </td>
-      </tr>
-        <td> Rarity ID <input type ="text" id="rarityID" name="Rarity ID"> </td>
-      </tr>
-      <tr>
-        <th>  <input type="submit" value="Edit"> </th>
-      </tr>
+</form>
+
+<h2 class="heading">Edit Data</h2>
+<form>
+	<table class="data">
+		<tr>
+			<td> Item ID<input type ="text" id="itemID" name="itemID"> </td>
+		</tr>
+		<tr>
+			<td> Consumable ID <input type ="text" id="consumableID" name="consumableID"> </td>
+		</tr>
+		<tr>
+			<td> Gear ID <input type ="text" id="gearID" name="gearID"> </td>
+		</tr>
+		<tr>
+			<th>  <input type="submit" value="Edit"> </th>
+		</tr>
     </table>
-    </form>
-    <h2> Remove Data </h2>
-    <form>
-      <table style="width:25%">
+</form>
+
+<h2 class="heading"> Remove Data </h2>
+<form>
+    <table class="data">
         <tr>
 			<td>
-				<select name="GradeingCategoryName">
-					<option value="HelmetID">Bow ID</option>
-					<option value="ChestplateID">Sword ID</option>
-					<option value="LeggingID">Staff ID</option>
-				</select> <input type ="text" id="recoveryHMID" name="recoveryHM ID">
+				Item ID<input type ="text" id="itemID" name="itemID">
 			</td>
         </tr>
         <tr>
-          <th>  <input type="submit" value="Remove"> </th>
+			<th>  <input type="submit" value="Remove"> </th>
         </tr>
-      </table>
-    </form>
-	<h2> Search Data </h2>
-    <form>
-      <table style="width:25%">
+	</table>
+</form>
+<h2 class="heading"> Search Data </h2>
+<form action="/Item_IDs" method="POST">
+    <table class="data">
         <tr>
 			<td>
-				<select name="GradeingCategoryName">
-					<option value="HelmetID">Bow ID</option>
-					<option value="ChestplateID">Sword ID</option>
-					<option value="LeggingID">Staff ID</option>
-				</select> <input type ="text" id="recoveryHMID" name="recoveryHM ID">
+				<select name="searchData" id="searchData">
+					<option value="itemID">Item ID</option>
+					<option value="consumableID">Consumable ID</option>
+					<option value="gearID">Gear ID</option>
+				</select> <input type ="text" id="searchDataAmount" name="searchDataAmount">
 			</td>
         </tr>
         <tr>
-          <th>  <input type="submit" value="Search"> </th>
+			<th>  <input type="submit" value="Search"> </th>
         </tr>
-      </table>
-    </form>
-</html>
+	</table>
+</form>

@@ -1,70 +1,69 @@
-<html>
-	<form>
-      <h3 class="heading">Data</h3>
-        <table class="data">
+<form>
+    <h3 class="heading">Data</h3>
+    <table class="data">
+		<tr>
+			<td> Consumable ID </td>
+			<td> Name </td>
+			<td> Recovery </td>
+			<td> Recovery Type ID</td>
+			<td> Quantity </td>
+			<td> Description </td>
+		</tr>
+		{{#each Page}}
 			<tr>
-				<td> Consumable ID </td>
-				<td> Name </td>
-				<td> Recovery </td>
-				<td> Recovery Type ID</td>
-				<td> Quantity </td>
-				<td> Description </td>
+				<td> {{consumableID}} </td>
+				<td> {{name}} </td>
+				<td> {{recovery}} </td>
+				<td> {{recoveryTypeID}} </td>
+				<td> {{quantity}} </td>
+				<td> {{description}} </td>
 			</tr>
-			{{#each Page}}
-				<tr>
-					<td> {{consumableID}} </td>
-					<td> {{name}} </td>
-					<td> {{recovery}} </td>
-					<td> {{recoveryTypeID}} </td>
-					<td> {{quantity}} </td>
-					<td> {{description}} </td>
-				</tr>
-			{{/each}}
-        </table>
-    </form>
+		{{/each}}
+    </table>
+</form>
 	
-	<h2 class="heading">Edit Data</h2>
-	<form>
+<h2 class="heading">Edit Data</h2>
+<form action="/Consumables/Edit" method="POST">
 	<table class="data">
 		<tr>
-			Consumable ID <input type ="text" id="consumableID" name="consumableID"> </td>
+			<td> Consumable ID <input type ="text" id="consumableID" name="consumableID"> </td>
 		</tr>
 		<tr>
-			Name <input type ="text" id="name" name="name"> </td>
+			<td> Name <input type ="text" id="name" name="name"> </td>
 		</tr>
 		<tr>
-			Recovery <input type ="text" id="recovery" name="recovery"> </td>
+			<td> Recovery <input type ="text" id="recovery" name="recovery"> </td>
 		</tr>
 		<tr>
-			Quantity <input type ="text" id="quantity" name="quantity"> </td>
+			<td> Quantity <input type ="text" id="quantity" name="quantity"> </td>
 		</tr>
 		<tr>
-			Description <input type ="text" id="description" name="description"> </td>
+			<td> Description <input type ="text" id="description" name="description"> </td>
 		</tr>
 		<tr>
-			Rarity ID <input type ="text" id="rarityID" name="Rarity ID"> </td>
+			<td> Rarity ID <input type ="text" id="rarityID" name="Rarity ID"> </td>
 		</tr>		
-      <tr>
-        <th>  <input type="submit" value="Edit"> </th>
-      </tr>
+		<tr>
+			<th>  <input type="submit" value="Edit"> </th>
+		</tr>
     </table>
-    </form>
-    <h2 class="heading"> Remove Data </h2>
-    <form>
-      <table class="data">
+</form>
+<h2 class="heading"> Remove Data </h2>
+<form>
+    <table class="data">
         <tr>
 			<td>
 				Consumable ID <input type ="text" id="Remove" name="Remove">
 			</td>
         </tr>
         <tr>
-          <th>  <input type="submit" value="Remove"> </th>
+			<th>  <input type="submit" value="Remove"> </th>
         </tr>
-      </table>
-    </form>
-	<h2 class="heading"> Search Data </h2>
-    <form>
-      <table class="data">
+    </table>
+</form>
+<h2 class="heading"> Search Data </h2>
+<form action="/Consumables" method="POST">
+    <table class="data">
         <tr>
 			<td>
 				<select name="searchData" id="searchData">
@@ -78,8 +77,7 @@
 			</td>
         </tr>
         <tr>
-          <th>  <input type="submit" value="Search"> </th>
+			<th>  <input type="submit" value="Search"> </th>
         </tr>
-      </table>
-    </form>
-</html>
+    </table>
+</form>

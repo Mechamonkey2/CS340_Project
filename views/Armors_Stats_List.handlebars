@@ -1,0 +1,34 @@
+<form>
+	<h3 class="heading">Data</h3>
+		<table class="data">
+			<tr>
+				<td>Armor Stat List ID</td>
+				<td>Armor Stat ID</td>
+				<td>Gear ID</td>				
+			</tr>
+			{{#each Page}}
+				<tr>
+					<td> {{armorStatListID}} </td>
+					<td> {{armorStatID}} </td>
+					<td> {{gearID}} </td>
+				</tr>
+			{{/each}}
+		</table>
+</form>
+
+	<h2 class="heading"> Search Data </h2>
+	<form action="/Armors_Stats_List" method="POST">
+		<table class="data">
+			<tr>
+				<td><select id="searchData" name="searchData">
+						<option value="armorStatListID">Armor Stat List ID</option>
+						<option value="armorStatID">Armor Stat ID</option>
+						<option value="gearID">Gear ID</option>
+					</select><input type ="text" id="searchDataAmount" name="searchDataAmount" min="0"></td>
+			</tr>
+			<tr>
+				<th>  <input type="submit" value="Search"> </th>
+			</tr>
+		</table>
+	</form>
+
